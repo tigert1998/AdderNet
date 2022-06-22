@@ -115,6 +115,10 @@ class ResNet(nn.Module):
         return x.view(x.size(0), -1)
 
 
+def resnet18(**kwargs):
+    model = ResNet(Bottleneck, [2, 2, 2, 2], **kwargs)
+    return model
+
 
 def resnet50(**kwargs):
     model = ResNet(Bottleneck, [3, 4, 6, 3], **kwargs)

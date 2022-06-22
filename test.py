@@ -28,11 +28,11 @@ def main():
 
     # create model
     if args.dataset == 'cifar10':
-        import resnet20
-        model = resnet20.resnet20()
+        import adder_resnet_cifar
+        model = adder_resnet_cifar.resnet20()
     elif args.dataset == 'ImageNet':
-        import resnet50
-        model = resnet50.resnet50()
+        import adder_resnet_imagenet
+        model = adder_resnet_imagenet.resnet50()
         
     model = torch.nn.DataParallel(model).cuda()
     
